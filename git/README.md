@@ -1,10 +1,28 @@
-**Git tutorial for beginners**
+# Git tutorial for beginners
+
+## Table of Contents
+
+- [Create a new repo on github](#create-a-new-repo-on-github)
+- [Upload local content to a remote repository](#upload-local-content-to-a-remote-repository)
+- [Overwrite a commit after pushed to remote](#overwrite-a-commit-after-pushed-to-remote)
+- [Change the commit author for single/last commit](#change-the-commit-author-for-singlelast-commit)
+- [Discard commit](#discard-commit)
+- [Comparing/diff commits](#comparingdiff-commits)
+- [Delete git tag local and remote](#delete-git-tag-local-and-remote)
+- [Changing a GitHub repository's visibility](#changing-a-github-repositorys-visibility)
+- [Delete inactive deployments](#delete-inactive-deployments)
+- [Managing remote Git repositories](#managing-remote-git-repositories)
+- [Manage Multiple GitHub (gh) CLI Accounts](#manage-multiple-github-gh-cli-accounts)
+
+<br />
+
+## Create a new repo on github
+
+Related: [gh_repo_create](https://cli.github.com/manual/gh_repo_create#examples)
 
 <details>
-<summary>Create a new repo on github</summary>
-ㅤ
-
-[related](https://cli.github.com/manual/gh_repo_create#examples)
+<summary>show/hide</summary>
+<br />
 
 1. Login to github: `gh auth login`
 2. Set global options (name & email):
@@ -21,13 +39,14 @@
    ```bash
    git remote add origin https://github.com/<your_username>/<your-repo>.git
    ```
-
-ㅤ
 </details>
+<br />
+
+## Upload local content to a remote repository
 
 <details>
-<summary>Upload local content to a remote repository</summary>
-ㅤ
+<summary>show/hide</summary>
+<br />
 
 1. Include updates
 
@@ -47,17 +66,18 @@
    # first commit use:
    git push -u origin main
    ```
-
-ㅤ
 </details>
+<br />
+
+## Overwrite a commit after pushed to remote
+
+Source: https://stackoverflow.com/a/35543613
 
 <details>
-<summary>Overwrite a commit after pushed to remote</summary>
-ㅤ
+<summary>show/hide</summary>
+<br />
 
-[source](https://cli.github.com/manual/gh_repo_create#examples)
-
-1. Include updates
+1. Include updates (optional)
 
    ```bash
    git add .
@@ -72,15 +92,16 @@
    ```bash
    git push -f
    ```
-
-ㅤ
 </details>
+<br />
+
+## Change the commit author for single/last commit
+
+Related: https://stackoverflow.com/a/43231587
 
 <details>
-<summary>Change the commit author for single/last commit</summary>
-ㅤ
-
-[related](https://stackoverflow.com/a/43231587)
+<summary>show/hide</summary>
+<br />
 
 1. Modify old commit
 
@@ -100,15 +121,16 @@
 
    git push --force-with-lease
    ```
-
-ㅤ
 </details>
+<br />
+
+## Discard commit
+
+Source: https://stackoverflow.com/a/48732358
 
 <details>
-<summary>Discard commit</summary>
-ㅤ
-
-[source](https://stackoverflow.com/a/48732358)
+<summary>show/hide</summary>
+<br />
 
 - Delete the most recent local commit, **without discard local files changes**:
    ```bash
@@ -127,15 +149,16 @@
 
    git reset --hard <commit_sha_hash>
    ```
-
-ㅤ
 </details>
+<br />
+
+## Comparing/diff commits
+
+Source: [Comparing commits](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits)
 
 <details>
-<summary>Comparing/diff commits</summary>
-ㅤ
-
-[source](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits)
+<summary>show/hide</summary>
+<br />
 
 Compares two arbitrary commits, using commit SHA-1 hash.
 
@@ -148,15 +171,16 @@ or use the shortened SHA code
 ```
 https://github.com/sekedus/tamp/compare/3184ad9..b431a20
 ```
-
-ㅤ
 </details>
+<br />
+
+## Delete git tag local and remote
+
+Source: https://gist.github.com/mobilemind/7883996
 
 <details>
-<summary>Delete git tag local and remote</summary>
-ㅤ
-
-[source](https://gist.github.com/mobilemind/7883996)
+<summary>show/hide</summary>
+<br />
 
 ```
 # delete local tag '12345'
@@ -168,33 +192,32 @@ git push origin :refs/tags/12345
 # alternative approach
 git push --delete origin tagName
 ```
-
-ㅤ
 </details>
+<br />
 
-<details>
-<summary>Changing a GitHub repository's visibility</summary>
-ㅤ
+## Changing a GitHub repository's visibility
 
 [GitHub Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#changing-a-repositorys-visibility)
 
-ㅤ
-</details>
+<br />
 
-<details>
-<summary>Delete inactive deployments</summary>
-ㅤ
+## Delete inactive deployments
 
 [community/discussions#85000 (comment)](https://github.com/orgs/community/discussions/85000#discussioncomment-14245406)
 
-ㅤ
-</details>
+<br />
 
+## Managing remote Git repositories
+
+Source:
+- https://stackoverflow.com/a/16330439
+- [Managing remote repositories](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories)
+- [git-remote](https://git-scm.com/docs/git-remote)
+
+<br />
 <details>
-<summary>Managing remote Git repositories</summary>
-ㅤ
-
-[source](https://stackoverflow.com/a/16330439), [source2](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories), [source3](https://git-scm.com/docs/git-remote)
+<summary>show/hide</summary>
+<br />
 
 ```
 # Set a new remote
@@ -209,15 +232,19 @@ git remote remove <REMOTE_NAME>
 # List remote
 git remote -v
 ```
-
-ㅤ
 </details>
+<br />
 
+## Manage Multiple GitHub (gh) CLI Accounts
+
+Related:
+- [GitHub Blog](https://stackoverflow.com/a/16330439)
+- [GitHub CLI manual](https://cli.github.com/manual/gh_auth)
+
+<br />
 <details>
-<summary>Manage Multiple GitHub (gh) CLI Accounts</summary>
-ㅤ
-
-[GitHub Blog](https://stackoverflow.com/a/16330439), [GitHub CLI manual](https://cli.github.com/manual/gh_auth)
+<summary>show/hide</summary>
+<br />
 
 1. Add Multiple Accounts
    ```bash
@@ -246,6 +273,5 @@ git remote -v
    ```bash
    gh auth logout
    ```
-
-ㅤ
 </details>
+<br />
